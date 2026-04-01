@@ -14,6 +14,7 @@ ai-rules/
     ├── naming-conventions.mdc
     ├── javascript-typescript-standards.mdc
     ├── php-standards.mdc
+    ├── spaghetti-code.mdc
     └── ui-minimalist.mdc
 ```
 
@@ -27,6 +28,7 @@ ai-rules/
 | `naming-conventions.mdc` | Estilos de nombres (código y BD) | Siempre |
 | `javascript-typescript-standards.mdc` | JS/TS: npm, async/await, DOM | Por globs `*.{ts,tsx,js,jsx,mjs,cjs}` |
 | `php-standards.mdc` | PHP: `strict_types`, Composer, SQL preparado, namespaces | Por globs `*.php` |
+| `spaghetti-code.mdc` | Evitar y analizar código espagueti (flujo, anidación, responsabilidades, acoplamiento) | Inteligente (`alwaysApply: false`) |
 | `ui-minimalist.mdc` | UI minimalista: tipografía, bordes, sombras, animación | Por globs `*.{tsx,jsx,css,scss}` |
 
 ---

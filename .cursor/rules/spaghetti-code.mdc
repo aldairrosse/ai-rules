@@ -1,0 +1,31 @@
+---
+description: Detectar, explicar y reducir código espagueti (flujo enredado, anidación, responsabilidades mezcladas, dependencias ocultas)
+alwaysApply: false
+---
+
+# Código espagueti: evitar y analizar
+
+## Qué considerar “spaghetti” aquí
+- **Flujo ilegible**: muchos `if`/`else` anidados, saltos lógicos difíciles de seguir, efectos encadenados sin orden claro.
+- **Funciones o módulos “dios”**: demasiadas responsabilidades, muchos parámetros o estado mutable compartido sin límites.
+- **Acoplamiento oculto**: dependencias globales, singletons abusivos, llamadas cruzadas entre capas sin contrato.
+- **Control de flujo profundo**: bucles con lógica de negocio dentro, mezcla de I/O, parsing y reglas en el mismo bloque.
+
+## Antes de cambiar código (análisis breve)
+1. **Identificar el objetivo** del bloque (una frase): qué problema resuelve.
+2. **Trazar entradas y salidas** y efectos secundarios (red, disco, DOM, logs).
+3. **Contar niveles de anidación** y ramas; señalar dónde se mezclan capas (p. ej. SQL en vista, HTTP en dominio).
+4. Si el riesgo es alto o el alcance no está claro, **proponer** un plan en pasos pequeños antes de refactorizar masivo.
+
+## Cómo evitar añadir más spaghetti
+- **Extraer** funciones con nombre que cuenten la intención; preferir **early return** a pirámides de `if`.
+- **Una responsabilidad por función**; si un nombre necesita “y”, dividir.
+- **No duplicar** ramas de lógica: consolidar condiciones o extraer a tabla/estructura de datos cuando aplique.
+- **Aislar I/O** de reglas de negocio cuando sea razonable (sin over-engineering).
+
+## Al refactorizar
+- Cambios **incrementales** y revisables; no reescribir archivos enteros salvo petición explícita.
+- Si el código existente es legado frágil, **mencionar** riesgos y pruebas sugeridas (sin inventar cobertura que no exista).
+
+## Relación con otras reglas
+- Esta regla **complementa** tamaño de funciones/archivos y KISS del resto del paquete; ante conflicto, priorizar lo que el **proyecto** defina como contrato o tests.
