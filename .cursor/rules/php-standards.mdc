@@ -1,0 +1,21 @@
+---
+description: Estándares PHP (tipado estricto, Composer, SQL preparado, namespaces)
+globs: **/*.php
+alwaysApply: false
+---
+
+# PHP
+
+## Cabecera y estructura
+- **`declare(strict_types=1);`** al inicio de cada archivo PHP que ejecute lógica.
+- **`namespace`** declarado **siempre al inicio** del archivo (tras `<?php` y `declare` si aplica), antes de `use` y el resto del código.
+
+## Tipado y toolchain
+- Tipos explícitos en **parámetros** y **retornos** siempre que el proyecto lo permita.
+- Dependencias y autoload vía **Composer** (no mezclar includes manuales salvo legacy justificado).
+
+## Base de datos
+- **Solo sentencias preparadas** (PDO, DBAL, etc.); **prohibido** concatenar variables en SQL crudo.
+
+## Modernidad
+- Código alineado con PHP moderno del proyecto; evitar APIs deprecadas sin necesidad.

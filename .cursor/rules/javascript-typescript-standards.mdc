@@ -1,0 +1,20 @@
+---
+description: Estándares JS/TS (async/await, DOM seguro, gestor de paquetes)
+globs: **/*.{ts,tsx,js,jsx,mjs,cjs}
+alwaysApply: false
+---
+
+# JavaScript / TypeScript
+
+## Herramientas
+- Gestión de dependencias con **npm** por defecto (salvo que el repo defina `pnpm`/`yarn`).
+
+## Asincronía
+- Preferir **`async` / `await`** frente a cadenas largas de `.then()` cuando mejore la legibilidad.
+
+## DOM y HTML dinámico
+- Evitar **`innerHTML`** para datos que puedan contener input del usuario; preferir **`textContent`**, APIs seguras o frameworks que escapen (React, etc.).
+- No construir HTML sensible con **template strings** interpolando datos sin escape.
+
+## Calidad
+- Mantener nombres y funciones acotadas alineados con las reglas globales de naming y tamaño de archivo.

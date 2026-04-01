@@ -1,0 +1,18 @@
+---
+description: Convenciones de nombres estilo Clean Code (código y DB)
+alwaysApply: true
+---
+
+# Convenciones de nombres
+
+| Ámbito | Estilo | Ejemplo |
+|--------|--------|---------|
+| Variables y funciones (JS/TS/PHP métodos) | `camelCase` | `daysSinceCreated` |
+| Clases / componentes tipo clase | `PascalCase` | `OrderRepository` |
+| Constantes de módulo | `UPPER_SNAKE_CASE` | `MAX_RETRY_COUNT` |
+| Columnas / tablas (BD) | `snake_case` | `created_at` |
+
+## Calidad del nombre
+- Preferir **intención clara** sobre abreviaturas opacas: mal `d`, bien `diasDesdeCreacion` (o equivalente en inglés según convención del repo).
+- **Pronunciables y buscables** con búsqueda en proyecto; evitar `data1`, `data2`, `tmp`.
+- **Sin mapeos mentales**: no prefijos tipo `s_name`, `i_id`; el nombre debe leerse solo.

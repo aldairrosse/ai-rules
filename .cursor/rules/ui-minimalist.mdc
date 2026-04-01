@@ -1,0 +1,24 @@
+---
+description: UI limpia y minimalista (tipografía, bordes, sombras, animación)
+globs: **/*.{tsx,jsx,css,scss}
+alwaysApply: false
+---
+
+# UI/UX: minimalista primero
+
+## Estética general
+- Diseños **muy limpios**, poco ruido visual; jerarquía clara sin adorno innecesario.
+
+## Tipografía (texto visible)
+- Usar **sentence case** en títulos, encabezados y etiquetas de botones: solo la primera palabra en mayúscula (ej. `Titulo de sección admin`). Respetar nombres propios y marcas.
+
+## Bordes y sombras
+- **No usar** `box-shadow`.
+- **No usar** `border-left` ni `border-right` como recurso de diseño; usar **borde completo** (`border`) o **ninguno**.
+
+## Movimiento
+- Evitar **micro-animaciones** y **transiciones complejas**; priorizar rapidez y simplicidad.
+- **Hovers** sutiles permitidos **sin** simular profundidad extra (sin sombras ni “elevación” fuerte).
+
+## Carga e interacción
+- Incluir **estados de carga** claros (`loading`, skeleton o mensaje explícito) en flujos async.

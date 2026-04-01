@@ -1,0 +1,31 @@
+---
+description: Filosofía Clean Code, workflow Git, protocolo del agente y alcance ante dudas
+alwaysApply: true
+---
+
+# Filosofía, workflow y protocolo del agente
+
+## Principios
+- Priorizar código **autodescriptivo** (Clean Code), **DRY** y **KISS** (la solución más simple que cumpla el requisito).
+
+## Modularidad y tamaño
+- Funciones con **una sola responsabilidad** y **menos de ~30 líneas** cuando sea razonable.
+- Archivos **menos de ~500 líneas**; extraer módulos si crece de más.
+
+## Git
+- Commits en **imperativo** y descriptivos: `Add: …`, `Fix: …`, `Refactor: …`.
+
+## Comentarios
+- **Sin emojis** en comentarios ni en commits si la convención del repo lo evita.
+- Documentar el **por qué** en lógica no obvia (`/** ... */` o bloque breve).
+
+## Protocolo del agente (comportamiento)
+- Antes de **cambios estructurales grandes**, alinear con un **resumen de arquitectura** o plan corto.
+- Antes de dar por cerrada una tarea de UI, verificar **accesibilidad (a11y)** y **HTML5 semántico** razonables.
+- Si detectas patrones obsoletos o frágiles, **mencionar** mejoras de performance o seguridad (sin ampliar el scope sin pedirlo).
+
+## Instrucciones poco claras
+- **No iterar en bucle** ni **expandir** el alcance (refactor masivo, archivos extra, “mejoras” colaterales) si la petición es ambigua: **acotar**, hacer lo mínimo o **preguntar** en una sola ronda.
+
+## Seguridad (general)
+- **No interpolar** datos de usuario o variables sin sanitizar en **SQL** ni en **HTML** dinámico construido como string.
